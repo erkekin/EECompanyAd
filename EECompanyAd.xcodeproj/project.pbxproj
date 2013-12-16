@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF2A701D185F4F2E00723B49 /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = FF2A701C185F4F2E00723B49 /* tutorial.png */; };
+		FF2A701F185F54A400723B49 /* howitlooks.png in Resources */ = {isa = PBXBuildFile; fileRef = FF2A701E185F54A400723B49 /* howitlooks.png */; };
 		FF7C76B8185F47FC00239AA1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76A6185F47FC00239AA1 /* AFHTTPRequestOperation.m */; };
 		FF7C76B9185F47FC00239AA1 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76A8185F47FC00239AA1 /* AFHTTPRequestOperationManager.m */; };
 		FF7C76BA185F47FC00239AA1 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76AA185F47FC00239AA1 /* AFHTTPSessionManager.m */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		FF2A701C185F4F2E00723B49 /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
+		FF2A701E185F54A400723B49 /* howitlooks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howitlooks.png; sourceTree = "<group>"; };
 		FF7C76A5185F47FC00239AA1 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		FF7C76A6185F47FC00239AA1 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		FF7C76A7185F47FC00239AA1 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				FFF8718C185F43AC001110CA /* EEViewController.m */,
 				FFF8718E185F43AC001110CA /* Images.xcassets */,
 				FF2A701C185F4F2E00723B49 /* tutorial.png */,
+				FF2A701E185F54A400723B49 /* howitlooks.png */,
 				FFF8717D185F43AC001110CA /* Supporting Files */,
 			);
 			path = EECompanyAd;
@@ -310,6 +313,7 @@
 				FFF87181185F43AC001110CA /* InfoPlist.strings in Resources */,
 				FFF8718A185F43AC001110CA /* Main.storyboard in Resources */,
 				FF2A701D185F4F2E00723B49 /* tutorial.png in Resources */,
+				FF2A701F185F54A400723B49 /* howitlooks.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

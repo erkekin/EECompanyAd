@@ -14,7 +14,6 @@ Advertise your iOS Company Apps in your apps!
 
 - Usage of plist file which ancludes or excludes apps.
 
-
-
 by <br>
-@erkekin
+- [@erkekin](https://twitter.com/erkekin)
+

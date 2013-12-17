@@ -1,6 +1,6 @@
 EECompanyId
 ============
-
+<br>
 Advertise your iOS Company Apps in your apps!
 
 - Fetch your apps from iTunes API.
@@ -11,11 +11,11 @@ Advertise your iOS Company Apps in your apps!
   <img src="https://github.com/erkekin/EECompanyAd/blob/master/EECompanyAd/tutorial.png?raw=true" alt="EECompanyId" title="EECompanyId">
 </p>
 ## Installation
-1 Drag and drop a UIView into your .xib file.
-2 Change its class to EECompanyId
-3 Enter User Defined Runtime Attribute as key:companyId value:__YOUR_APPLE_COMPANY_ID__
-  or initWithCompanyId programmatically!
-
+1 Drag and drop a UIView into your .xib file.<br>
+2 Change its class to EECompanyId<br>
+3 Enter User Defined Runtime Attribute as key:companyId value:__YOUR_APPLE_COMPANY_ID__<br>
+  or initWithCompanyId programmatically!<br>
+<br>
 This is how it looks at the end!
 <p align="center" >
   <img src="https://github.com/erkekin/EECompanyAd/blob/master/EECompanyAd/howitlooks.png?raw=true" alt="How it looks" title="EECompanyId">

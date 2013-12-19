@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface EECompanyId : UIView
-- (id)initWithFrame:(CGRect)frame andCompanyId:(int)companyId;
+- (id)initWithFrame:(CGRect)frame andCompanyId:(NSString *)companyId;
 
 @property (nonatomic,strong) NSArray * appsArray;
 @property (readwrite) int currentIndex;

@@ -2,11 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>extraApps</key>
-	<array/>
-	<key>AppsToExclude</key>
+	<key>include</key>
+	<array>
+		<string>537595865</string>
+		<string>520881188</string>
+	</array>
+	<key>exclude</key>
 	<array>
 		<string>593805596</string>
+		<string>536475833</string>
+		<string>671755133</string>
+		<string>536462665</string>
 	</array>
 </dict>
 </plist>

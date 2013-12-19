@@ -19,8 +19,6 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"EECompanyId" ofType:@"plist"];
     
     NSDictionary*   plist = [[NSDictionary alloc]initWithContentsOfFile:path];
-    
-    NSLog(@"First Index Name %@",plist[@"AppsToExclude"]);
     return  plist;
     
 }
@@ -29,10 +27,35 @@
     
     NSIndexSet * set = [allApps indexesOfObjectsPassingTest:^BOOL(NSDictionary * dict, NSUInteger idx, BOOL *stop) {
         
-        return [appIds containsObject:dict[@"trackId"]];
+        __block   bool var=1;
+        
+        [appIds enumerateObjectsUsingBlock:^(NSString* obj, NSUInteger idx, BOOL *stop) {
+            
+            if (obj.intValue ==  [dict[@"trackId"] intValue]) {
+                var =0;
+                *stop = YES;
+                
+            }
+            
+        }];
+ 
+        return var;
     }];
     
     return [NSArray arrayWithArray:[allApps objectsAtIndexes:set]];
+}
+
+-(NSString*)includeTheseApps:(NSArray*)appIds toAllApps:(NSArray*)apps{
+    
+ __block   NSString * string = @"";
+    
+    [appIds enumerateObjectsUsingBlock:^(NSString * trackId, NSUInteger idx, BOOL *stop) {
+        string = [string stringByAppendingString:trackId];
+        if (idx != appIds.count-1)
+        string = [string stringByAppendingString:@","];
+    }];
+    
+    return string;
 }
 
 - (void)getImage:(NSString*)urlString andSuccess:(void (^)(UIImage * responseObject))success
@@ -56,12 +79,19 @@
 -(void)setViewsForLoopWithAPIResponse:(id)responseObject andWithInterval:(NSUInteger)interval{
     
     NSMutableArray * modilisimCompanyApps = [[NSMutableArray alloc] initWithArray:responseObject[@"results"]];
-    
+       NSLog(@"sds %@",modilisimCompanyApps);
     [modilisimCompanyApps removeObject:modilisimCompanyApps.firstObject];
-    self.appsArray = [NSArray arrayWithArray:modilisimCompanyApps];
+    self.appsArray =[NSArray arrayWithArray:modilisimCompanyApps];
+        //   self.appsArray =   [self excludeTheseApps:[self getPlist][@"exclude"] fromAllApps:[NSArray arrayWithArray:modilisimCompanyApps]];
+    
+           [self.appsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        NSLog(@"sds %@ %@",obj[@"trackId"],obj[@"trackName"]);
+    }];
     
     self.currentIndex = 0;
     if (!self.appsArray.count) return;
+    
     [NSTimer scheduledTimerWithTimeInterval:interval block:^{
         
         UIView * view =  [self setViewForApp:self.appsArray[self.currentIndex%self.appsArray.count]];
@@ -101,13 +131,14 @@
             
         }];
     }
+    
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
     [self getImage:appInfo[@"artworkUrl100"] andSuccess:^(UIImage *responseObject) {
         
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
         [button addEventHandler:^(id sender, UIEvent *event) {
-            NSLog(@"%@",appInfo);
+        
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appInfo[@"trackViewUrl"]]];
             
         } forControlEvent:UIControlEventTouchUpInside];
@@ -136,13 +167,14 @@
     return view;
 }
 
-- (void)getITunesApiWithCompanyId:(int)companyId {
+- (void)getITunesApiWithCompanyId:(NSString*)itemsId {
     
     NSURL * url = [NSURL URLWithString:@"https://itunes.apple.com/"];
     
     AFHTTPRequestOperationManager * manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
-    [manager GET:@"lookup" parameters:@{@"id": [NSString stringWithFormat:@"%d",companyId],@"entity":@"software"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self getPlist];
+    [manager GET:@"lookup" parameters:@{@"id": itemsId,@"entity":@"software"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        
         [self setViewsForLoopWithAPIResponse:responseObject andWithInterval:5];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -156,28 +188,30 @@
 {
     
     if ([key isEqualToString:@"companyId"])
+    
     {
-        
-        [self getITunesApiWithCompanyId:[value intValue]];
-        
-        
+            // [self getITunesApiWithCompanyId:value];
+    
+        [self getITunesApiWithCompanyId:[self includeTheseApps:[self getPlist][@"include"] toAllApps:nil]];
+    
     }
 }
+
 - (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
-    if (self) {
-        
+    if (self)
         self.clipsToBounds = YES;
-    }
+    
     return self;
 }
 
 
-- (id)initWithFrame:(CGRect)frame andCompanyId:(int)companyId
+- (id)initWithFrame:(CGRect)frame andItemsId:(NSString*)itemsId
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        [self getITunesApiWithCompanyId:companyId];
+    if (self){
+          self.clipsToBounds = YES;
+        [self getITunesApiWithCompanyId:itemsId];
     }
     return self;
 }

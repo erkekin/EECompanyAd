@@ -5,6 +5,8 @@
 	<key>extraApps</key>
 	<array/>
 	<key>AppsToExclude</key>
-	<array/>
+	<array>
+		<string>593805596</string>
+	</array>
 </dict>
 </plist>

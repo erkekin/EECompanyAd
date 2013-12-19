@@ -1,10 +1,10 @@
-//
-//  DLSAd.m
-//  Depremler
-//
-//  Created by Dilisim Individual on 14/12/13.
-//  Copyright (c) 2013 modilişim. All rights reserved.
-//
+    //
+    //  DLSAd.m
+    //  Depremler
+    //
+    //  Created by Dilisim Individual on 14/12/13.
+    //  Copyright (c) 2013 modilişim. All rights reserved.
+    //
 
 #import "EECompanyId.h"
 #import "AFNetworking.h"
@@ -13,6 +13,27 @@
 
 
 @implementation EECompanyId
+
+-(NSDictionary*)getPlist{
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"EECompanyId" ofType:@"plist"];
+    
+    NSDictionary*   plist = [[NSDictionary alloc]initWithContentsOfFile:path];
+    
+    NSLog(@"First Index Name %@",plist[@"AppsToExclude"]);
+    return  plist;
+    
+}
+
+-(NSArray*)excludeTheseApps:(NSArray*)appIds fromAllApps:(NSArray*)allApps{
+    
+    NSIndexSet * set = [allApps indexesOfObjectsPassingTest:^BOOL(NSDictionary * dict, NSUInteger idx, BOOL *stop) {
+        
+        return [appIds containsObject:dict[@"trackId"]];
+    }];
+    
+    return [NSArray arrayWithArray:[allApps objectsAtIndexes:set]];
+}
 
 - (void)getImage:(NSString*)urlString andSuccess:(void (^)(UIImage * responseObject))success
          failure:(void (^)(NSError * error))failure{
@@ -43,19 +64,19 @@
     if (!self.appsArray.count) return;
     [NSTimer scheduledTimerWithTimeInterval:interval block:^{
         
-      UIView * view =  [self setViewForApp:self.appsArray[self.currentIndex%self.appsArray.count]];
+        UIView * view =  [self setViewForApp:self.appsArray[self.currentIndex%self.appsArray.count]];
         
-           view.alpha = 0;
-         [self addSubview:view];
+        view.alpha = 0;
+        [self addSubview:view];
         [UIView animateWithDuration:0.3 animations:^{
             
             view.alpha = 1;
             
         } completion:^(BOOL finished) {
-           
+            
             
         }];
-
+        
         ++self.currentIndex;
         
     } repeats:YES];
@@ -81,7 +102,7 @@
         }];
     }
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-
+    
     [self getImage:appInfo[@"artworkUrl100"] andSuccess:^(UIImage *responseObject) {
         
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
@@ -121,7 +142,7 @@
     
     AFHTTPRequestOperationManager * manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
     [manager GET:@"lookup" parameters:@{@"id": [NSString stringWithFormat:@"%d",companyId],@"entity":@"software"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+        [self getPlist];
         [self setViewsForLoopWithAPIResponse:responseObject andWithInterval:5];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -133,12 +154,12 @@
 
 -(void) setValue:(id)value forKey:(NSString *)key
 {
-
+    
     if ([key isEqualToString:@"companyId"])
     {
-
-          [self getITunesApiWithCompanyId:[value intValue]];
-    
+        
+        [self getITunesApiWithCompanyId:[value intValue]];
+        
         
     }
 }

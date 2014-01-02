@@ -38,7 +38,7 @@
             }
             
         }];
- 
+        
         return var;
     }];
     
@@ -47,12 +47,12 @@
 
 -(NSString*)includeTheseApps:(NSArray*)appIds toAllApps:(NSArray*)apps{
     
- __block   NSString * string = @"";
+    __block   NSString * string = @"";
     
     [appIds enumerateObjectsUsingBlock:^(NSString * trackId, NSUInteger idx, BOOL *stop) {
         string = [string stringByAppendingString:trackId];
         if (idx != appIds.count-1)
-        string = [string stringByAppendingString:@","];
+            string = [string stringByAppendingString:@","];
     }];
     
     return string;
@@ -79,12 +79,12 @@
 -(void)setViewsForLoopWithAPIResponse:(id)responseObject andWithInterval:(NSUInteger)interval{
     
     NSMutableArray * modilisimCompanyApps = [[NSMutableArray alloc] initWithArray:responseObject[@"results"]];
-       NSLog(@"sds %@",modilisimCompanyApps);
+    NSLog(@"sds %@",modilisimCompanyApps);
     [modilisimCompanyApps removeObject:modilisimCompanyApps.firstObject];
     self.appsArray =[NSArray arrayWithArray:modilisimCompanyApps];
         //   self.appsArray =   [self excludeTheseApps:[self getPlist][@"exclude"] fromAllApps:[NSArray arrayWithArray:modilisimCompanyApps]];
     
-           [self.appsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [self.appsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
         NSLog(@"sds %@ %@",obj[@"trackId"],obj[@"trackName"]);
     }];
@@ -138,7 +138,7 @@
         
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
         [button addEventHandler:^(id sender, UIEvent *event) {
-        
+            
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appInfo[@"trackViewUrl"]]];
             
         } forControlEvent:UIControlEventTouchUpInside];
@@ -173,7 +173,7 @@
     
     AFHTTPRequestOperationManager * manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
     [manager GET:@"lookup" parameters:@{@"id": itemsId,@"entity":@"software"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
+        
         
         [self setViewsForLoopWithAPIResponse:responseObject andWithInterval:5];
         
@@ -184,16 +184,40 @@
     }];
 }
 
+-(void)main{
+    
+    NSArray* include =  [self getPlist][@"include"];
+    NSArray* exclude =  [self getPlist][@"exclude"];
+    
+    if (!include.count && !exclude.count) {
+            // eğer exclude ve include boşsa direk company id'den sorgu at ve ilk item ı çıkar
+        
+    }else if (include.count) {
+        
+        
+        
+    }else if (exclude.count) {
+        
+        
+        
+    }
+    
+    
+        // eğer include varsa companyId ile birleştirip sorgu at ve ilk itemı çıkar
+        // eğer yalnızca exclude varsa companyId ye sorgu at gelenden ilkini ve exclude u çıkar
+    
+    
+}
 -(void) setValue:(id)value forKey:(NSString *)key
 {
     
     if ([key isEqualToString:@"companyId"])
-    
+        
     {
-            // [self getITunesApiWithCompanyId:value];
-    
+        [self getITunesApiWithCompanyId:value];
+        
         [self getITunesApiWithCompanyId:[self includeTheseApps:[self getPlist][@"include"] toAllApps:nil]];
-    
+        
     }
 }
 
@@ -210,7 +234,7 @@
 {
     self = [super initWithFrame:frame];
     if (self){
-          self.clipsToBounds = YES;
+        self.clipsToBounds = YES;
         [self getITunesApiWithCompanyId:itemsId];
     }
     return self;

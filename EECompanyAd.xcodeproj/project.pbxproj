@@ -16,6 +16,7 @@
 		FF7C76BE185F47FC00239AA1 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76B3185F47FC00239AA1 /* AFURLRequestSerialization.m */; };
 		FF7C76BF185F47FC00239AA1 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76B5185F47FC00239AA1 /* AFURLResponseSerialization.m */; };
 		FF7C76C0185F47FC00239AA1 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76B7185F47FC00239AA1 /* AFURLSessionManager.m */; };
+		FFA9E85C1875629D0061ADEF /* CornerTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA9E85B1875629D0061ADEF /* CornerTestView.m */; };
 		FFF87177185F43AC001110CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF87176185F43AC001110CA /* Foundation.framework */; };
 		FFF87179185F43AC001110CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF87178185F43AC001110CA /* CoreGraphics.framework */; };
 		FFF8717B185F43AC001110CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF8717A185F43AC001110CA /* UIKit.framework */; };
@@ -66,6 +67,8 @@
 		FF7C76B5185F47FC00239AA1 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		FF7C76B6185F47FC00239AA1 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		FF7C76B7185F47FC00239AA1 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		FFA9E85A1875629D0061ADEF /* CornerTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerTestView.h; sourceTree = "<group>"; };
+		FFA9E85B1875629D0061ADEF /* CornerTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerTestView.m; sourceTree = "<group>"; };
 		FFF87173185F43AC001110CA /* EECompanyAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EECompanyAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF87176185F43AC001110CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFF87178185F43AC001110CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 		FFF8717C185F43AC001110CA /* EECompanyAd */ = {
 			isa = PBXGroup;
 			children = (
+				FFA9E85A1875629D0061ADEF /* CornerTestView.h */,
+				FFA9E85B1875629D0061ADEF /* CornerTestView.m */,
 				FF7C76A4185F47FC00239AA1 /* AFNetworking */,
 				FFF871AB185F43DC001110CA /* UIControl-JTTargetActionBlock.h */,
 				FFF871AC185F43DC001110CA /* UIControl-JTTargetActionBlock.m */,
@@ -339,6 +344,7 @@
 				FF7C76BC185F47FC00239AA1 /* AFSecurityPolicy.m in Sources */,
 				FF7C76BF185F47FC00239AA1 /* AFURLResponseSerialization.m in Sources */,
 				FF7C76B8185F47FC00239AA1 /* AFHTTPRequestOperation.m in Sources */,
+				FFA9E85C1875629D0061ADEF /* CornerTestView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

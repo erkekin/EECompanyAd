@@ -15,6 +15,7 @@
 @end
 
 @implementation UIControlEventWrapper
+
 @synthesize controlEvent, handler;
 - (void)sender:(id)sender forEvent:(UIEvent *)event {
     if (self.handler) {

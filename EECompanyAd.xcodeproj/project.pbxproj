@@ -16,6 +16,7 @@
 		FF7C76BE185F47FC00239AA1 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76B3185F47FC00239AA1 /* AFURLRequestSerialization.m */; };
 		FF7C76BF185F47FC00239AA1 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76B5185F47FC00239AA1 /* AFURLResponseSerialization.m */; };
 		FF7C76C0185F47FC00239AA1 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76B7185F47FC00239AA1 /* AFURLSessionManager.m */; };
+		FFDFB425189B933900A3250F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDFB424189B933900A3250F /* StoreKit.framework */; };
 		FFF87177185F43AC001110CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF87176185F43AC001110CA /* Foundation.framework */; };
 		FFF87179185F43AC001110CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF87178185F43AC001110CA /* CoreGraphics.framework */; };
 		FFF8717B185F43AC001110CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF8717A185F43AC001110CA /* UIKit.framework */; };
@@ -31,8 +32,7 @@
 		FFF871A0185F43AC001110CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFF8719E185F43AC001110CA /* InfoPlist.strings */; };
 		FFF871A2185F43AC001110CA /* EECompanyAdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF871A1185F43AC001110CA /* EECompanyAdTests.m */; };
 		FFF871B2185F43DC001110CA /* UIControl-JTTargetActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF871AC185F43DC001110CA /* UIControl-JTTargetActionBlock.m */; };
-		FFF871B3185F43DC001110CA /* EECompanyId.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF871AE185F43DC001110CA /* EECompanyId.m */; };
-		FFF871B4185F43DC001110CA /* EECompanyId.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF871AF185F43DC001110CA /* EECompanyId.plist */; };
+		FFF871B3185F43DC001110CA /* EECompanyAd.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF871AE185F43DC001110CA /* EECompanyAd.m */; };
 		FFF871B5185F43DC001110CA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF871B1185F43DC001110CA /* NSTimer+Blocks.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -66,6 +66,7 @@
 		FF7C76B5185F47FC00239AA1 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		FF7C76B6185F47FC00239AA1 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		FF7C76B7185F47FC00239AA1 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		FFDFB424189B933900A3250F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FFF87173185F43AC001110CA /* EECompanyAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EECompanyAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF87176185F43AC001110CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFF87178185F43AC001110CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,9 +88,8 @@
 		FFF871A1185F43AC001110CA /* EECompanyAdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EECompanyAdTests.m; sourceTree = "<group>"; };
 		FFF871AB185F43DC001110CA /* UIControl-JTTargetActionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl-JTTargetActionBlock.h"; sourceTree = "<group>"; };
 		FFF871AC185F43DC001110CA /* UIControl-JTTargetActionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl-JTTargetActionBlock.m"; sourceTree = "<group>"; };
-		FFF871AD185F43DC001110CA /* EECompanyId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EECompanyId.h; sourceTree = "<group>"; };
-		FFF871AE185F43DC001110CA /* EECompanyId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EECompanyId.m; sourceTree = "<group>"; };
-		FFF871AF185F43DC001110CA /* EECompanyId.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EECompanyId.plist; sourceTree = "<group>"; };
+		FFF871AD185F43DC001110CA /* EECompanyAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EECompanyAd.h; sourceTree = "<group>"; };
+		FFF871AE185F43DC001110CA /* EECompanyAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EECompanyAd.m; sourceTree = "<group>"; };
 		FFF871B0185F43DC001110CA /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
 		FFF871B1185F43DC001110CA /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDFB425189B933900A3250F /* StoreKit.framework in Frameworks */,
 				FFF87179185F43AC001110CA /* CoreGraphics.framework in Frameworks */,
 				FFF8717B185F43AC001110CA /* UIKit.framework in Frameworks */,
 				FFF87177185F43AC001110CA /* Foundation.framework in Frameworks */,
@@ -166,6 +167,7 @@
 		FFF87175185F43AC001110CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFDFB424189B933900A3250F /* StoreKit.framework */,
 				FFF87176185F43AC001110CA /* Foundation.framework */,
 				FFF87178185F43AC001110CA /* CoreGraphics.framework */,
 				FFF8717A185F43AC001110CA /* UIKit.framework */,
@@ -180,9 +182,8 @@
 				FF7C76A4185F47FC00239AA1 /* AFNetworking */,
 				FFF871AB185F43DC001110CA /* UIControl-JTTargetActionBlock.h */,
 				FFF871AC185F43DC001110CA /* UIControl-JTTargetActionBlock.m */,
-				FFF871AD185F43DC001110CA /* EECompanyId.h */,
-				FFF871AE185F43DC001110CA /* EECompanyId.m */,
-				FFF871AF185F43DC001110CA /* EECompanyId.plist */,
+				FFF871AD185F43DC001110CA /* EECompanyAd.h */,
+				FFF871AE185F43DC001110CA /* EECompanyAd.m */,
 				FFF871B0185F43DC001110CA /* NSTimer+Blocks.h */,
 				FFF871B1185F43DC001110CA /* NSTimer+Blocks.m */,
 				FFF87185185F43AC001110CA /* EEAppDelegate.h */,
@@ -303,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFF8718F185F43AC001110CA /* Images.xcassets in Resources */,
-				FFF871B4185F43DC001110CA /* EECompanyId.plist in Resources */,
 				FFF87181185F43AC001110CA /* InfoPlist.strings in Resources */,
 				FFF8718A185F43AC001110CA /* Main.storyboard in Resources */,
 			);
@@ -332,7 +332,7 @@
 				FF7C76BD185F47FC00239AA1 /* AFURLConnectionOperation.m in Sources */,
 				FF7C76BA185F47FC00239AA1 /* AFHTTPSessionManager.m in Sources */,
 				FF7C76BE185F47FC00239AA1 /* AFURLRequestSerialization.m in Sources */,
-				FFF871B3185F43DC001110CA /* EECompanyId.m in Sources */,
+				FFF871B3185F43DC001110CA /* EECompanyAd.m in Sources */,
 				FFF87187185F43AC001110CA /* EEAppDelegate.m in Sources */,
 				FFF87183185F43AC001110CA /* main.m in Sources */,
 				FF7C76B9185F47FC00239AA1 /* AFHTTPRequestOperationManager.m in Sources */,

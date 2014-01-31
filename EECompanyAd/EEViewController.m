@@ -7,8 +7,10 @@
 //
 
 #import "EEViewController.h"
+#import <StoreKit/StoreKit.h>
+#import "EECompanyAd.h"
 
-@interface EEViewController ()
+@interface EEViewController ()<SKStoreProductViewControllerDelegate>
 
 @end
 
@@ -17,13 +19,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    EECompanyAd *ad= [[EECompanyAd alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-60, self.view.bounds.size.width, 60) andCompanyId:635874236 andVC:self];
+    
+    [self.view addSubview:ad];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

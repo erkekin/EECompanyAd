@@ -17,6 +17,7 @@
 		FF7C76BF185F47FC00239AA1 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76B5185F47FC00239AA1 /* AFURLResponseSerialization.m */; };
 		FF7C76C0185F47FC00239AA1 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7C76B7185F47FC00239AA1 /* AFURLSessionManager.m */; };
 		FFDFB425189B933900A3250F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDFB424189B933900A3250F /* StoreKit.framework */; };
+		FFDFB427189BA70A00A3250F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDFB426189BA70A00A3250F /* QuartzCore.framework */; };
 		FFF87177185F43AC001110CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF87176185F43AC001110CA /* Foundation.framework */; };
 		FFF87179185F43AC001110CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF87178185F43AC001110CA /* CoreGraphics.framework */; };
 		FFF8717B185F43AC001110CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF8717A185F43AC001110CA /* UIKit.framework */; };
@@ -67,6 +68,7 @@
 		FF7C76B6185F47FC00239AA1 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		FF7C76B7185F47FC00239AA1 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		FFDFB424189B933900A3250F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FFDFB426189BA70A00A3250F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FFF87173185F43AC001110CA /* EECompanyAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EECompanyAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF87176185F43AC001110CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFF87178185F43AC001110CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDFB427189BA70A00A3250F /* QuartzCore.framework in Frameworks */,
 				FFDFB425189B933900A3250F /* StoreKit.framework in Frameworks */,
 				FFF87179185F43AC001110CA /* CoreGraphics.framework in Frameworks */,
 				FFF8717B185F43AC001110CA /* UIKit.framework in Frameworks */,
@@ -167,6 +170,7 @@
 		FFF87175185F43AC001110CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFDFB426189BA70A00A3250F /* QuartzCore.framework */,
 				FFDFB424189B933900A3250F /* StoreKit.framework */,
 				FFF87176185F43AC001110CA /* Foundation.framework */,
 				FFF87178185F43AC001110CA /* CoreGraphics.framework */,

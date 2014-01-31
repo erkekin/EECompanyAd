@@ -11,8 +11,6 @@
 @interface EECompanyAd : UIView
 
 - (id)initWithFrame:(CGRect)frame andCompanyId:(int)companyId andVC:(UIViewController*)VC;
-@property (nonatomic,strong) UIViewController * parentVC;
-@property (nonatomic,strong) NSArray * appsArray;
-@property (readwrite) int currentIndex;
+
 
 @end
